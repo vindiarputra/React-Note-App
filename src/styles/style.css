@@ -1,0 +1,416 @@
+:root {
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #03dac6;
+  --background: #000000;
+  --surface: #121212;
+  --error: #cf6679;
+  --warning: #f39c12;
+  --on-background: #ffffff;
+  --on-background-grey: #c7c7c7;
+  --on-surface: #ffffff;
+}
+
+[data-theme="light"] {
+  --background: #dddddd;
+  --surface: #ffffff;
+  --on-background: #333333;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.app-container {
+  color: var(--on-background);
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+}
+
+header a:nth-child(2) {
+  font-size: 1.875rem;
+}
+
+header h1 {
+  flex: 2;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--on-background);
+}
+
+header .navBar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+header .navBar ul li {
+  margin: 0 0.5rem;
+  font-size: 1.875rem;
+}
+
+main {
+  display: flex;
+  margin: auto;
+  padding: 2rem 0;
+  width: 90%;
+  max-width: 75rem;
+  justify-content: center;
+}
+
+main h2:nth-child(1) {
+  text-align: center;
+}
+
+.noteList {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+.noteList-empty {
+  margin-top: 2rem;
+  padding: 1rem 0.5rem;
+}
+
+.noteList-empty p {
+  text-align: center;
+  color: var(--on-background-grey);
+}
+
+.noteItem {
+  flex: 1 0 calc(33.33% - 1rem);
+  min-width: 15rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  border: 1px solid var(--on-background);
+  border-top: 0.3125rem solid;
+  overflow: hidden;
+}
+
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--on-background-grey);
+}
+
+.noteItem-title {
+  margin: 0.25rem 0;
+}
+
+.noteItem-createdAt {
+  color: var(--on-background-grey);
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.noteItem-action {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.25rem 0 0.125rem;
+  gap: 0.625rem;
+  margin-top: auto;
+}
+
+.noteItem-body {
+  margin-top: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.detail-page {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.noteDetail-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.homepage,
+.ArsipPage,
+.add-new-note,
+.edit-page {
+  width: 100%;
+}
+
+.homepage-action,
+.add-new-note-action,
+.editNote-action,
+.edit-page-action {
+  position: fixed;
+  display: flex;
+  gap: 1rem;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 0;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 3.125rem;
+  background-color: var(--on-background);
+  color: var(--background);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.search-input,
+.noteTitle {
+  margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--on-background);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+  color: var(--on-background);
+}
+
+.noteSection {
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+}
+
+.noteBody {
+  flex: 1;
+  margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  color: var(--on-background);
+  overflow-y: auto;
+}
+
+.search-bar input::placeholder,
+.noteHeader input::placeholder {
+  color: var(--on-background-grey);
+}
+
+.search-container {
+  text-align: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px;
+  margin: 0;
+}
+
+.error h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ff5f52;
+
+  .error p {
+    font-size: 1.2em;
+    color: #aaa;
+  }
+}
+
+/* Form Login/Register*/
+
+.app-form-input {
+  background-color: #333333;
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginPage,
+.UserRegistrationPage {
+  background-color: rgba(170, 170, 170, 0.7);
+  border-radius: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  padding: 26px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+
+  margin: 1rem 0;
+}
+
+#name,
+#email,
+#password,
+#confirmPassword {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.password-toggle {
+  display: flex;
+  align-items: center;
+}
+
+#password {
+  flex: 1;
+}
+
+.toggle-button {
+  position: relative;
+  margin-left: 10px;
+  background: none;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+
+.toggle-button:hover {
+  background: none; 
+  outline: none;
+  border: none;
+
+}
+
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 123, 255, 0.9);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 86, 179, 0.9);
+}
+
+.Context-theme {
+  position: fixed;
+  top: 6rem;
+  right: 1rem;
+}
+
+.Context-locale {
+  position: fixed;
+  bottom: 0;
+  margin: 1rem;
+}
+
+.Context button {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Loading.css */
+
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better visibility */
+}
+
+.loading-override {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid red; /* Change 'border-color' to 'border' and set the border width */
+  padding: 20px; /* Add some padding for better visual appearance */
+  border-radius: 8px; /* Add border-radius for rounded corners */
+}
+
+
+@media screen and (min-width: 320px) {
+  .noteDetail-title {
+    font-size: 4rem;
+  }
+
+  .LoginPage,
+  .UserRegistrationPage {
+    padding: 2rem 2rem;
+    border-radius: 20px;
+  }
+
+  form {
+    width: 98%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .noteDetail-title {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .noteDetail-title {
+    font-size: 5rem;
+  }
+  .noteDetail-body {
+    font-size: 1.2rem;
+  }
+}
