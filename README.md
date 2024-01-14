@@ -22,4 +22,4 @@ Aplikasi ini dibuat sebagai bagian dari submission Dicoding. Aplikasi ini memanf
 
 ## Cara Menjalankan
 
-Untuk menjalankan aplikasi ini, Anda perlu menginstal Node.js dan npm. Setelah itu, Anda dapat menjalankan `npm install` untuk menginstal semua dependensi dan `npm start` untuk menjalankan aplikasi.
+Untuk menjalankan aplikasi ini, Anda perlu menginstal Node.js dan npm. Setelah itu, Anda dapat menjalankan `npm install` untuk menginstal semua dependensi dan `npm run dev` untuk menjalankan aplikasi.
