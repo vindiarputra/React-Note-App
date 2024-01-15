@@ -16,12 +16,13 @@ import ToggleTranslate from "./components/ToggleTranslate";
 import { LocaleProvider } from "./contexts/LocaleContext";
 import Loading from "./components/Loading";
 
-const HOME_PATH = "React-NoteApp-V2/";
-const ARCHIVES_PATH = "React-NoteApp-V2/archives";
-const NEW_NOTE_PATH = "React-NoteApp-V2/notes/new";
-const DETAIL_NOTE_PATH = "React-NoteApp-V2/notes/:id";
-const LOGIN_PATH = "React-NoteApp-V2/*";
-const REGISTER_PATH = "React-NoteApp-V2/register";
+const HOME_PATH = process.env.PUBLIC_URL + "/";
+const ARCHIVES_PATH = process.env.PUBLIC_URL + "/archives";
+const NEW_NOTE_PATH = process.env.PUBLIC_URL + "/notes/new";
+const DETAIL_NOTE_PATH = process.env.PUBLIC_URL + "/notes/:id";
+const LOGIN_PATH = process.env.PUBLIC_URL + "/";
+const REGISTER_PATH = process.env.PUBLIC_URL + "/register";
+
 
 function App() {
   const [loggedInUser, setLoggedInUser] = React.useState(null);
